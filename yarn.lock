@@ -828,13 +828,12 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.0.tgz#a17b3a8ea811060e74d47d306122400ad4497ae2"
   integrity sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
 
-axios@^0.18.0:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
-  integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
+axios@^0.19.2:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
-    is-buffer "^2.0.2"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -5520,11 +5519,6 @@ is-buffer@^1.0.2, is-buffer@^1.1.5:
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-buffer@^2.0.2:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
-  integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
-
 is-callable@^1.1.4, is-callable@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.5.tgz#f7e46b596890456db74e7f6e976cb3273d06faab"
@@ -10142,7 +10136,7 @@ vue-loader@^15.2.4:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.0.1:
+vue-router@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.2.0.tgz#da35195ffe37fdf0bec9f5f8f72781d2a7718815"
   integrity sha512-khkrcUIzMcI1rDcNtqkvLwfRFzB97GmJEsPAQdj7t/VvpGhmXLOkUfhc+Ah8CvpSXGXwuWuQO+x8Sy/xDhXZIA==
@@ -10181,7 +10175,7 @@ vuex-electron@^1.0.0:
     deepmerge "^2.1.1"
     electron-store "^2.0.0"
 
-vuex@^3.0.1:
+vuex@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.4.0.tgz#20cc086062d750769fce1febb34e7fceeaebde45"
   integrity sha512-ajtqwEW/QhnrBZQsZxCLHThZZaa+Db45c92Asf46ZDXu6uHXgbfVuBaJ4gzD2r4UX0oMJHstFwd2r2HM4l8umg==
