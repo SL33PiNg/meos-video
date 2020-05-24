@@ -10167,7 +10167,7 @@ vue@^2.6.11:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
 
-vuex-electron@^1.0.0:
+vuex-electron@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/vuex-electron/-/vuex-electron-1.0.3.tgz#c8ce0fd06ed9d3beb8881bce39bf76c9fcdc5611"
   integrity sha512-fPv6nQa3yllKHy+8GT/xBMLw95slnLQRAV7Rddr1rNwc369vZvT6j9mQs7easwWgdk/Cnqqcq2Uay1SQE9KahQ==
