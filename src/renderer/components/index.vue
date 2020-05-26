@@ -5,18 +5,19 @@
 <script>
 import mapboxgl from 'mapbox-gl'
 export default {
-  data () {
+  data() {
     return {
       latlng: '',
-      accessToken: 'pk.eyJ1Ijoibm9vazM5MjAiLCJhIjoiY2s5OTlycGRkMDEzbjNlbWt0eWJpYWo3OCJ9.STeeCOccG7hVQ8aiktTRFw',
+      accessToken:
+        'pk.eyJ1Ijoibm9vazM5MjAiLCJhIjoiY2s5OTlycGRkMDEzbjNlbWt0eWJpYWo3OCJ9.STeeCOccG7hVQ8aiktTRFw',
       map: {}
     }
   },
-  mounted () {
+  mounted() {
     this.createMap()
   },
   methods: {
-    createMap () {
+    createMap() {
       mapboxgl.accessToken = this.accessToken
       this.map = new mapboxgl.Map({
         container: 'map',
@@ -25,14 +26,19 @@ export default {
         zoom: 10
       })
     }
-
   }
 }
 </script>
 
 <style scoped>
-#map{
-   width:100%;
-   height:100vh;
+#map {
+  width: 100%;
+  height: 100vh;
+}
+.mapboxgl-control-container {
+  display: none;
+}
+.mapbox-improve-map {
+  display: none;
 }
 </style>

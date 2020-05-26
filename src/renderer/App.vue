@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style>
-/* CSS */
+.mapboxgl-control-container {
+  display: none;
+}
 </style>
