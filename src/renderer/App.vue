@@ -14,4 +14,8 @@ export default {
 .mapboxgl-control-container {
   display: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
 </style>
