@@ -49,6 +49,10 @@ app.on('activate', () => {
   }
 })
 
+app.on('uncaughtException', (err) => { 
+  console.error('uncaughtException', err); 
+});
+
 /**
  * Auto Updater
  *
