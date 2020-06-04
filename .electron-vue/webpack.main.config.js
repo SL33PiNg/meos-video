@@ -1,5 +1,4 @@
 'use strict'
-
 process.env.BABEL_ENV = 'main'
 
 const path = require('path')
@@ -52,6 +51,11 @@ let mainConfig = {
     new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
+    symlinks: false,
+    alias: {
+      'vue$': 'vue/dist/vue.runtime.esm.js',
+      '^vuetify': path.resolve(__dirname, 'node_modules/vuetify')
+    },
     extensions: ['.js', '.json', '.node']
   },
   target: 'electron-main'

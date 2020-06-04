@@ -3244,6 +3244,21 @@ chokidar@3.3.0:
   optionalDependencies:
     fsevents "~2.1.1"
 
+"chokidar@>=2.0.0 <4.0.0", chokidar@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.0.tgz#b30611423ce376357c765b9b8f904b9fba3c0be8"
+  integrity sha512-aXAaho2VJtisB/1fg1+3nlLJqGOuewTzQpd/Tz0yTg2R0e4IGtshYvtjowyEumcBv2z+y4+kc75Mz7j5xJskcQ==
+  dependencies:
+    anymatch "~3.1.1"
+    braces "~3.0.2"
+    glob-parent "~5.1.0"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.4.0"
+  optionalDependencies:
+    fsevents "~2.1.2"
+
 chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
@@ -3262,21 +3277,6 @@ chokidar@^2.1.8:
     upath "^1.1.1"
   optionalDependencies:
     fsevents "^1.2.7"
-
-chokidar@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.0.tgz#b30611423ce376357c765b9b8f904b9fba3c0be8"
-  integrity sha512-aXAaho2VJtisB/1fg1+3nlLJqGOuewTzQpd/Tz0yTg2R0e4IGtshYvtjowyEumcBv2z+y4+kc75Mz7j5xJskcQ==
-  dependencies:
-    anymatch "~3.1.1"
-    braces "~3.0.2"
-    glob-parent "~5.1.0"
-    is-binary-path "~2.1.0"
-    is-glob "~4.0.1"
-    normalize-path "~3.0.0"
-    readdirp "~3.4.0"
-  optionalDependencies:
-    fsevents "~2.1.2"
 
 chownr@^1.1.1:
   version "1.1.4"
@@ -3985,6 +3985,11 @@ deepmerge@^2.1.1:
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.2.1.tgz#5d3ff22a01c00f645405a2fbc17d0778a1801170"
   integrity sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 deepmerge@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.0.1.tgz#25c1c24f110fb914f80001b925264dd77f3f4312"
@@ -4098,6 +4103,11 @@ detect-indent@^4.0.0:
   integrity sha1-920GQ1LN9Docts5hnE7jqUdd4gg=
   dependencies:
     repeating "^2.0.0"
+
+detect-libc@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
+  integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
 
 detect-node@^2.0.4:
   version "2.0.4"
@@ -5086,6 +5096,13 @@ fd-slicer@~1.1.0:
   integrity sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4=
   dependencies:
     pend "~1.2.0"
+
+fibers@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fibers/-/fibers-5.0.0.tgz#3a60e0695b3ee5f6db94e62726716fa7a59acc41"
+  integrity sha512-UpGv/YAZp7mhKHxDvC1tColrroGRX90sSvh8RMZV9leo+e5+EkRVgCEZPlmXeo3BUNQTZxUaVdLskq1Q2FyCPg==
+  dependencies:
+    detect-libc "^1.0.3"
 
 figgy-pudding@^3.5.1:
   version "3.5.2"
@@ -9229,6 +9246,13 @@ sass-loader@^8.0.2:
     schema-utils "^2.6.1"
     semver "^6.3.0"
 
+sass@^1.26.7:
+  version "1.26.7"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.26.7.tgz#d3c9f3dd9771632bfb60af8746c308da3765166d"
+  integrity sha512-xgNazdkr6yvgHEfNaOjKtZzhDZmKYMCmoRKMPrTDo7YvjaITIzU2DDYsIUuN/atAg7/JOxPeCQHH7TtCo5Tq2g==
+  dependencies:
+    chokidar ">=2.0.0 <4.0.0"
+
 sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -10661,6 +10685,11 @@ vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
+
+vuetify@^2.2.32:
+  version "2.2.32"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.2.32.tgz#53a511916382e4fd6a0f01347233e67f817d95f9"
+  integrity sha512-53K8jRS3bnk6SZwZ9DVJMl3EqED5rEVoq8DHXPf90Pdbt4rr9JTKtuVu17m3k/sJ3GvpmIgMl6iwH2qCo29nAQ==
 
 vuex-electron@^1.0.3:
   version "1.0.3"

@@ -23,8 +23,11 @@ export default {
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [100.5923, 13.9255],
-        zoom: 10
+        zoom: 10,
+        
       })
+      this.map.touchPitch.disable()
+      this.map.dragRotate.disable()
     }
   }
 }
