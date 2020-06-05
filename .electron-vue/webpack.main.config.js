@@ -5,15 +5,13 @@ const path = require('path')
 const { dependencies } = require('../package.json')
 const webpack = require('webpack')
 
-const MinifyPlugin = require("babel-minify-webpack-plugin")
+const MinifyPlugin = require('babel-minify-webpack-plugin')
 
 let mainConfig = {
   entry: {
     main: path.join(__dirname, '../src/main/index.js')
   },
-  externals: [
-    ...Object.keys(dependencies || {})
-  ],
+  externals: [...Object.keys(dependencies || {})],
   module: {
     rules: [
       {
@@ -47,13 +45,11 @@ let mainConfig = {
     libraryTarget: 'commonjs2',
     path: path.join(__dirname, '../dist/electron')
   },
-  plugins: [
-    new webpack.NoEmitOnErrorsPlugin()
-  ],
+  plugins: [new webpack.NoEmitOnErrorsPlugin()],
   resolve: {
     symlinks: false,
     alias: {
-      'vue$': 'vue/dist/vue.runtime.esm.js',
+      vue$: 'vue/dist/vue.runtime.esm.js',
       '^vuetify': path.resolve(__dirname, 'node_modules/vuetify')
     },
     extensions: ['.js', '.json', '.node']
@@ -67,7 +63,7 @@ let mainConfig = {
 if (process.env.NODE_ENV !== 'production') {
   mainConfig.plugins.push(
     new webpack.DefinePlugin({
-      '__static': `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`
+      __static: `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`
     })
   )
 }

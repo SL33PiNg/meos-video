@@ -6,7 +6,7 @@ const path = require('path')
 const { dependencies } = require('../package.json')
 const webpack = require('webpack')
 
-const MinifyPlugin = require("babel-minify-webpack-plugin")
+const MinifyPlugin = require('babel-minify-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -19,7 +19,7 @@ const { VueLoaderPlugin } = require('vue-loader')
  * that provide pure *.vue files that need compiling
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/webpack-configurations.html#white-listing-externals
  */
-let whiteListedModules = ['vue']
+let whiteListedModules = ['vue', 'vuetify']
 
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
@@ -27,7 +27,9 @@ let rendererConfig = {
     renderer: path.join(__dirname, '../src/renderer/main.js')
   },
   externals: [
-    ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
+    ...Object.keys(dependencies || {}).filter(
+      (d) => !whiteListedModules.includes(d)
+    )
   ],
   module: {
     rules: [
@@ -50,10 +52,10 @@ let rendererConfig = {
               sassOptions: {
                 fiber: require('fibers'),
                 indentedSyntax: true // optional
-              },
-            },
-          },
-        ],
+              }
+            }
+          }
+        ]
       },
       {
         test: /\.(js|vue)$/,
@@ -117,7 +119,7 @@ let rendererConfig = {
           options: {
             limit: 10000,
             esModule: false,
-            name: 'imgs/[name].[ext]',
+            name: 'imgs/[name].[ext]'
           }
         }
       },
@@ -147,7 +149,7 @@ let rendererConfig = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({filename: 'styles.css'}),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/index.ejs'),
@@ -158,9 +160,10 @@ let rendererConfig = {
       },
       isBrowser: false,
       isDevelopment: process.env.NODE_ENV !== 'production',
-      nodeModules: process.env.NODE_ENV !== 'production'
-        ? path.resolve(__dirname, '../node_modules')
-        : false
+      nodeModules:
+        process.env.NODE_ENV !== 'production'
+          ? path.resolve(__dirname, '../node_modules')
+          : false
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
@@ -172,8 +175,8 @@ let rendererConfig = {
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, '../src/renderer'),
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: path.resolve(__dirname, '../node_modules/vue/dist/vue.common.js'),
+      '^vuetify': path.resolve(__dirname, 'node_modules/vuetify')
     },
     extensions: ['.js', '.vue', '.json', '.css', '.node']
   },
@@ -186,7 +189,7 @@ let rendererConfig = {
 if (process.env.NODE_ENV !== 'production') {
   rendererConfig.plugins.push(
     new webpack.DefinePlugin({
-      '__static': `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`
+      __static: `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`
     })
   )
 }

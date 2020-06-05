@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'landing-page',
-      component: require('@/components/index').default
+      component: require('../components/index.vue').default
     },
     {
       path: '*',
