@@ -1,7 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow } from 'electron'
-
+import '../renderer/store'
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -28,7 +28,8 @@ function createWindow() {
     width: 1000,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    alwaysOnTop: true
   })
 
   mainWindow.loadURL(winURL)
@@ -52,9 +53,9 @@ app.on('activate', () => {
   }
 })
 
-app.on('uncaughtException', (err) => { 
-  console.error('uncaughtException', err); 
-});
+app.on('uncaughtException', (err) => {
+  console.error('uncaughtException', err)
+})
 
 /**
  * Auto Updater

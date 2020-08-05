@@ -55,9 +55,11 @@
     }
   },
   "dependencies": {
+    "@babel/runtime-corejs2": "^7.11.0",
     "axios": "^0.19.2",
     "mapbox-gl": "^1.10.1",
     "vue": "^2.6.11",
+    "vue-draggable-resizable": "^2.2.0",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.2.0",
     "vuetify": "^2.2.32",

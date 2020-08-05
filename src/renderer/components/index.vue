@@ -1,8 +1,13 @@
 <template>
   <div>
-    <v-btn color="red">
-      test
-    </v-btn>
+    <vue-draggable-resizable
+      v-if="layout"
+      style="position: absolute; top: 100px; left: 20px"
+    >
+      <v-card>
+        <img width="400" src="http://localhost:1234/video" />
+      </v-card>
+    </vue-draggable-resizable>
     <div id="map" />
   </div>
 </template>
@@ -18,6 +23,11 @@ export default {
       map: {}
     }
   },
+  computed: {
+    layout() {
+      return this.$store.state.Layout.panel
+    }
+  },
   mounted() {
     this.createMap()
   },
@@ -30,8 +40,8 @@ export default {
         center: [100.5923, 13.9255],
         zoom: 10
       })
-      this.map.touchPitch.disable()
-      this.map.dragRotate.disable()
+      // this.map.touchPitch.disable()
+      // this.map.dragRotate.disable()
     }
   }
 }
