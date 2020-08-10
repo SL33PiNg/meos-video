@@ -9,11 +9,11 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: ['standard', 'prettier', 'prettier/vue', 'plugin:vue/recommended'],
+  extends: ['prettier', 'prettier/vue', 'plugin:vue/recommended'],
   globals: {
     __static: true
   },
-  plugins: ['vue'],
+  plugins: ['prettier'],
   rules: {
     // allow paren-less arrow functions
     'arrow-parens': 0,

@@ -1,20 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-btn @click="toggleLayout">
-        test
-      </v-btn>
-      <v-btn @click="toggleLayout">
-        test
-      </v-btn>
-      <v-checkbox label="layout" />
-      {{ layout }}
-    </v-app-bar>
     <v-content>
       <div id="app">
         <router-view />
       </div>
     </v-content>
+    <v-footer padless absolute app>
+      <v-card height="100px" width="100%" color="grey">
+        <v-row justify="center">
+          status
+        </v-row>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 

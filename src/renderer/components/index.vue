@@ -1,61 +1,64 @@
 <template>
-  <div>
-    <vue-draggable-resizable
-      v-if="layout"
-      style="position: absolute; top: 100px; left: 20px"
-    >
-      <v-card>
-        <img width="400" src="http://localhost:1234/video" />
-      </v-card>
-    </vue-draggable-resizable>
-    <div id="map" />
-  </div>
+  <v-container>
+    <v-row justify="center">
+      Video Here<v-btn @click="start">start</v-btn
+      ><v-btn @click="play">play</v-btn>
+    </v-row>
+    <v-row justify="center">
+      <video ref="video" autoplay></video>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import mapboxgl from 'mapbox-gl'
+const { ipcRenderer } = require('electron')
+
 export default {
   data() {
     return {
-      latlng: '',
-      accessToken:
-        'pk.eyJ1Ijoibm9vazM5MjAiLCJhIjoiY2s5OTlycGRkMDEzbjNlbWt0eWJpYWo3OCJ9.STeeCOccG7hVQ8aiktTRFw',
-      map: {}
-    }
-  },
-  computed: {
-    layout() {
-      return this.$store.state.Layout.panel
+      videoUrl: 'udp://@235.101.23.11:51010',
+      mimecode: 'video/webm; codecs="vp8"',
+      mediaSource: new MediaSource(),
+      sourceBuffer: null,
+      video: null,
+      isPlay: false
     }
   },
   mounted() {
-    this.createMap()
+    this.video = this.$refs.video
+    console.log(this.video)
+    ipcRenderer.on('test-reply', (e, m) => this.receiveFromMain(e, m))
   },
   methods: {
-    createMap() {
-      mapboxgl.accessToken = this.accessToken
-      this.map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [100.5923, 13.9255],
-        zoom: 10
-      })
-      // this.map.touchPitch.disable()
-      // this.map.dragRotate.disable()
+    play() {
+      this.video.play()
+    },
+    start() {
+      console.log('start')
+      this.video.src = URL.createObjectURL(this.mediaSource)
+
+      this.mediaSource.addEventListener('sourceopen', () =>
+        this.onMediasource()
+      )
+      ipcRenderer.send('getStream')
+    },
+    onMediasource() {
+      console.log('onMediasource open')
+      this.sourceBuffer = this.mediaSource.addSourceBuffer(
+        'video/webm; codecs="vp8"'
+      )
+      this.sourceBuffer.mode = 'sequence'
+      console.log(this.sourceBuffer)
+    },
+    receiveFromMain(e, m) {
+      console.log('got media: ' + m.length)
+
+      this.sourceBuffer.appendBuffer(m)
+
+      this.video.play()
     }
   }
 }
 </script>
 
-<style scoped>
-#map {
-  width: 100%;
-  height: 100vh;
-}
-.mapboxgl-control-container {
-  display: none;
-}
-.mapbox-improve-map {
-  display: none;
-}
-</style>
+<style scoped></style>
